@@ -6,7 +6,17 @@ req.open("GET", url, true);
 req.responseType = "json";
 req.send();
 
-req.onreadystatechange = function() {
+// Random color schema
+document.addEventListener("DOMContentLoaded", () => {
+    let colors = [
+        "#eb6f92", "#BF616A", "#D08770",
+        "#EBCB8B", "#A3BE8C", "#B48EAD",
+        "#88C0D0", "#5E81AC", "#eb6f92"
+    ]
+    document.documentElement.style.setProperty('--primary-color', colors[Math.floor(Math.random() * colors.length)]);
+});
+
+req.onreadystatechange = function () {
     if (req.readyState == 4 && req.status == 200) {
         let res = req.response;
         earthquakes(res);
