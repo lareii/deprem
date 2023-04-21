@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Son Depremler</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kandilli Rasathanesi altyapısı ile hazırlanmış güncel depremleri görüntüleyen bir websitesi.">
+    <meta name="keywords" content="kandilli, rasathane, deprem, earthquake, turkey, turkiye, türkiye">
+    <meta name="author" content="larei">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mx-8 mb-4 grid grid-col gap-4">
+        <div class="mt-4 flex flex-nowrap items-center">
+            <h1 class="text-3xl font-bold grow"><a class="mag" href="https://larei.is-a.dev">larei/</a>deprem/</h1>
+            <a href="https://github.com/lareithen/deprem" target="_blank">⭐ GitHub</a>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+            <div class="flex flex-col border-2 border-color rounded-lg grow">
+                <div class="border-color border-b-[2px] p-2 text-center">Yakın Zamandaki En Büyük Deprem</div>
+                <div class="grow p-2 grid content-center">
+                    <h1 id="last-mag" class="text-3xl font-bold"></h1>
+                    <p id="last-title" class="text-base muted-color mb-10"></p>
+
+                    <p id="last-date" class="text-sm muted-color"></p>
+                </div>
+            </div>
+
+            <div class="border-2 border-color rounded-lg grow">
+                <div class="border-color border-b-[2px] p-2 text-center">Son 10 Deprem</div>
+                <canvas class="p-2 graph" id="chart"></canvas>
+            </div>
+        </div>
+
+        <div class="rounded-lg border-2 border-color shadow-md overflow-x-auto max-w-full">
+            <table class="table-auto w-full border-collapse" id="list">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tarih</th>
+                        <th>Saat</th>
+                        <th>Enlem (N)</th>
+                        <th>Boylam (E)</th>
+                        <th>Derinlik (km)</th>
+                        <th>Büyüklük</th>
+                        <th>Yer</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <div class="text-center text-sm muted-color">
+            Kaynak: <a class="mag" href="http://www.koeri.boun.edu.tr" target="_blank">Boğaziçi Üniversitesi Kandilli
+                Rasathanesi ve
+                Deprem Araştırma Enstitüsü Bölgesel Deprem-Tsunami
+                İzleme ve Değerlendirme Merkezi</a>
+            <br><br>
+            "Bu sitede yayımlanan her türlü bilgi, veri ve haritalar Boğaziçi Üniversitesi Rektörlüğü'ne aittir.
+            Boğaziçi Üniversitesi Kandilli Rasathanesi ve Deprem Araştırma Enstitüsü Bölgesel Deprem-Tsunami İzleme ve
+            Değerlendirme Merkezi kaynak gösterilerek kullanılabilir. Söz konusu bilgi, veri ve haritalar Boğaziçi
+            Üniversitesi Rektörlüğü'nün yazılı izni ve onayı olmadan herhangi bir şekilde ticari amaçlı kullanılamaz."
+            <br><br>
+            Made with ❤️ GitHub Pages ❤️ Tailwind CSS ❤️ by <a class="mag" href="https://github.com/lareithen/"
+                target="_blank">larei</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
