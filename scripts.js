@@ -89,7 +89,7 @@ function chart(res) {
                 x: {
                     ticks: {
                         font: {
-                            size: 5,
+                            size: 10,
                         }
                     }
                 },
