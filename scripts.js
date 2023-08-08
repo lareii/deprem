@@ -16,7 +16,7 @@ req.onreadystatechange = function() {
 // process incoming data
 function earthquakes(res) {
     if (res["status"] == true) {
-        let count = 100;
+        let count = res["result"].length;
         for (i in res["result"].reverse()) {
             let eq = res["result"][i];
 
